@@ -2,7 +2,7 @@
 # This script installs a nginx web server
 
 apt update -y
-apt install nginx -y
-ufw allow 80
-echo 'Hello World!' | tee /var/www/html/index.nginx-debian.html > /dev/null
+apt-get install nginx -y
+ufw allow "Nginx HTTP"
+echo 'Hello World!' | tee /var/www/html/index.html > /dev/null
 service nginx restart
