@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # This script installs a nginx web server
 
-apt update
+apt update -y
 apt install nginx -y
 ufw allow 80
-ufw --force enable
-echo 'Heloo World!' | tee /var/www/html/index.nginx-debian.html > /dev/null
+echo 'Hello World!' | tee /var/www/html/index.nginx-debian.html > /dev/null
 service nginx restart
