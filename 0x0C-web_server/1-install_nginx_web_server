@@ -1,8 +1,9 @@
-#!/bin/env bash
-# Update the system packages
+#!/usr/bin/env bash
+# This script installs a nginx web server
 
-sudo apt-get update
-sudo apt-get install nginx -y
-sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
-sudo service nginx restart
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
+apt update
+apt install nginx -y
+ufw allow 80
+ufw --force enable
+echo 'Heloo World!' | tee /var/www/html/index.nginx-debian.html > /dev/null
+service nginx restart
