@@ -1,7 +1,5 @@
-Host ubuntu
+Host 206911-web-01
     Hostname 52.86.116.24
     User ubuntu
     IdentityFile ~/.ssh/school
-
     PasswordAuthentication no
-
