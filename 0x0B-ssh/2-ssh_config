@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
-# This script adds the public key to the server
-ssh-copy-id -i ~/.ssh/school.pub ubuntu@52.86.116.24
+Host ubuntu
+    Hostname 52.86.116.24
+    User ubuntu
+    IdentityFile ~/.ssh/school
+
+    PasswordAuthentication no
 
