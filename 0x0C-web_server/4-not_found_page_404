@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 # This script configures the nginx server to have a custom 404 page that
-# contains the string Ceci n'est pas une page.
+# contains the string Ceci n'est page
 
 sudo apt update
-sudo apt install nginx -y
-sudo ufw allow 22
-sudo ufw allow 80
-sudo ufw enable
-echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
-echo "Page not available" > /usr/share/nginx/html/custom_404.html
-sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sed -i '/listen 80 default_server/a error_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n internal;}' /etc/nginx/sites-available/default
+sudo apt install -y nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+strn4replacement="server_name _;\n\treweite ^\/redirect_me https:\/\/www.github.com\/SirDom247 permanent";
+sudo sed -i "s/server_name _;/$strn4replacement/" /etc/nginx/sites-enabled/default
+
+#creating a 404error page
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+strn4replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+
+sudo sed -i "s/listen 80 default_server;/$strn4replacement/" /etc/nginx/sites-enabled/default
+
+#Restart nginx after implementing required changes
+
 sudo service nginx restart
