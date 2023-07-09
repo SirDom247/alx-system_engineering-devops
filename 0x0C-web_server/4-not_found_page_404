@@ -11,7 +11,7 @@ sudo sed -i "s/server_name _;/$strn4replacement/" /etc/nginx/sites-enabled/defau
 
 #creating a 404error page
 
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html 
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html >dev/null 
 
 strn4replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
 
