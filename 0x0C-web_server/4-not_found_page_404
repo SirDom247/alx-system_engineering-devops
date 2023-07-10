@@ -9,6 +9,5 @@ replacement_string="server_name _;\n\t\rewrite ^\/redirect_me https:\/\/github.c
 sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
 
-sudo sed -i "s/listen 80 default_server;/$strn4replacement/" /etc/nginx/sites-enabled/default
 sudo nginx -t
 sudo service nginx restart
