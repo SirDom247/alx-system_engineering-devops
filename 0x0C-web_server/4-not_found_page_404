@@ -5,9 +5,5 @@ sudo apt-get update -y
 sudo apt-get install -y nginx 
 sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" | sudo tee /var/www/html/index.html
-replacement_string="server_name _;\n\t\rewrite ^\/redirect_me https:\/\/github.com\/SirDom247 permanent;"
-sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
-
-sudo nginx -t
+replacement_stri`sudo nginx -t
 sudo service nginx restart
