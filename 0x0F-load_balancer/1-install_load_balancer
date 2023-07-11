@@ -13,7 +13,7 @@ sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
 # Edit the HAProxy configuration file
 sudo sed -i 's/^.*frontend.*$/frontend http_frontend\n    bind *:80\n    default_backend http_backend/' /etc/haproxy/haproxy.cfg
 
-sudo sed -i 's/^.*backend.*$/backend http_backend\n    balance roundrobin\n    server web-01 206911-web-01 52.86.116.24:80 check\n    server web-02 206911-web-02 3.94.185.217:80 check/' /etc/haproxy/haproxy.cfg
+sudo sed -i 's/^.*backend.*$/backend http_backend\n    balance roundrobin\n    206911-web-01 52.86.116.24:80 check\n 206911-web-02 3.94.185.217:80 check/' /etc/haproxy/haproxy.cfg
 
 # Enable HAProxy to be managed via init script
 sudo sed -i 's^/ENABLED=1/' /etc/default/haproxy
