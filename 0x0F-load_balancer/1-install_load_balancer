@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 # This script installs load balancer using the following steps and codes
-
 # Update the system packages
+# Install HAProxy
+# Configure HAProxy
+# Edit the HAProxy configuration file
+# Enable HAProxy to be managed via init script
+# Restart HAProxy service
+
 sudo apt update
 
-# Install HAProxy
 sudo apt install -y haproxy
 
-# Configure HAProxy
 sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.backup
 
-# Edit the HAProxy configuration file
 sudo sed -i 's/^.*frontend.*$/frontend http_frontend\n    bind *:80\n    default_backend http_backend/' /etc/haproxy/haproxy.cfg
 
 sudo sed -i 's/^.*backend.*$/backend http_backend\n    balance roundrobin\n    206911-web-01 52.86.116.24:80 check\n 206911-web-02 3.94.185.217:80 check/' /etc/haproxy/haproxy.cfg
 
-# Enable HAProxy to be managed via init script
 sudo sed -i 's^/ENABLED=1/' /etc/default/haproxy
 
-# Restart HAProxy service
 sudo service haproxy restart
 
