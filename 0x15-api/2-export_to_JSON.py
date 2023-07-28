@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Exports to-do list information for a given employee ID to JSON format."""
-#import json
-#import requests
-#import sys
+import json
+import requests
+import sys
 
 if __name__ == "__main__":
     user_id = sys.argv[1]
