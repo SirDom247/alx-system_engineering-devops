@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# FIXES AN APACHE SERVER IN A CONTAINER
+
+service apache2 start
