@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # FIXES AN APACHE SERVER IN A CONTAINER
+# Run Apache on the holbertonschool/265-0 Docker container.
 
+echo "ServerName localhost" >> /etc/apache2.conf
 service apache2 start
