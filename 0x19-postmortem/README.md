@@ -14,6 +14,9 @@ Affected Service: User Dashboard
 
 User Impact: Approximately 41% of users experienced complete unavailability of the User Dashboard. Remaining users experienced severe performance degradation and slow loading times, affecting their ability to use the application effectively.
 
+
+Timeline:
+
 	10:30: The issue was detected as a flurry of customer complaints regarding the inaccessible User Dashboard flooded customer support.
 
 	10:35: An alert received from the monitoring system indicated a sudden surge in error rates, prompting the engineering team's attention.
