@@ -1,12 +1,17 @@
-POSTMORTEM: WEB STACK OUTAGE INCIDENT
-Written by 
+POSTMORTEM: WEB STACK OUTAGE INCIDENT 
+
+Written by
 Dominic Donatus Udousoro
 dominicudosuoro@gmail.com
 
 Issue Summary:
+
 Duration: April 15, 2023, 10:30 - April 15, 2023, 13:45 (UTC)
+
 Impact: Web Application Service Downtime
+
 Affected Service: User Dashboard
+
 User Impact: Approximately 41% of users experienced complete unavailability of the User Dashboard. Remaining users experienced severe performance degradation and slow loading times, affecting their ability to use the application effectively.
 
 	10:30: The issue was detected as a flurry of customer complaints regarding the inaccessible User Dashboard flooded customer support.
