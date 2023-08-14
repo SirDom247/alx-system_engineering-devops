@@ -14,6 +14,7 @@ Affected Service: User Dashboard
 
 User Impact: Approximately 41% of users experienced complete unavailability of the User Dashboard. Remaining users experienced severe performance degradation and slow loading times, affecting their ability to use the application effectively.
 
+![Postmortem](https://user-images.githubusercontent.com/107593348/260339303-139fbbbc-8955-4039-812b-68f64d56ff02.png)
 
 Timeline:
 
